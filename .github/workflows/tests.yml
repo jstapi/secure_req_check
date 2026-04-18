@@ -21,4 +21,6 @@ jobs:
         pip install -e .
         pip install pytest pytest-mock requests-mock
     - name: Test with pytest
+      env:
+        HOME: /home/runner
       run: pytest

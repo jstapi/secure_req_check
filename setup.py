@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="secure-req-check",
-    version="0.1.0",
+    version="0.1.1",
     author="Your Name",
     description="CLI tool to check requirements.txt for vulnerabilities using NVD API",
     long_description=long_description,

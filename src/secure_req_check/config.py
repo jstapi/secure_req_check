@@ -1,3 +1,4 @@
+# src/secure_req_check/config.py
 import os
 import json
 from pathlib import Path
@@ -13,21 +14,27 @@ class Config:
         self._data = self._load()
 
     def _ensure_dirs(self):
-        self.config_dir.mkdir(parents=True, exist_ok=True)
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            self.config_dir.mkdir(parents=True, exist_ok=True)
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            pass
 
     def _load(self) -> dict:
         if self.config_file.exists():
             try:
                 with open(self.config_file, "r") as f:
                     return json.load(f)
-            except json.JSONDecodeError:
+            except (json.JSONDecodeError, IOError):
                 return {}
         return {}
 
     def _save(self):
-        with open(self.config_file, "w") as f:
-            json.dump(self._data, f, indent=2)
+        try:
+            with open(self.config_file, "w") as f:
+                json.dump(self._data, f, indent=2)
+        except IOError:
+            pass
 
     @property
     def api_key(self) -> Optional[str]:

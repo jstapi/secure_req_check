@@ -147,6 +147,10 @@ pytest
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
+## Changelog
+
+The сhangelog is available in this file - [CHANGELOG.md](CHANGELOG.md)
+
 ## Disclaimer
 
 This tool relies on the accuracy and completeness of the NVD database. It does **not** guarantee detection of all vulnerabilities and should be used as part of a comprehensive security strategy.

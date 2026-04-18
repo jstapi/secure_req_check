@@ -139,10 +139,15 @@ def clear_cache():
 @config_cmd.command("show")
 def show_config():
     """Show current configuration."""
-    config = Config()
-    click.echo(f"API Key: {'****' if config.api_key else 'Not set'}")
-    click.echo(f"Cache directory: {config.cache_dir}")
-    click.echo(f"Request timeout: {config.request_timeout}s")
+    try:
+        config = Config()
+        api_key_display = "****" if config.api_key else "Not set"
+        click.echo(f"API Key: {api_key_display}")
+        click.echo(f"Cache directory: {config.cache_dir}")
+        click.echo(f"Request timeout: {config.request_timeout}s")
+    except Exception as e:
+        click.secho(f"Error reading configuration: {e}", fg="red", err=True)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

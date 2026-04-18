@@ -12,7 +12,7 @@ class NVDClient:
         self.timeout = timeout
         self.verbose = verbose
         self.session = requests.Session()
-        self.session.headers.update({"User-Agent": "secure-req-check/0.1.0"})
+        self.session.headers.update({"User-Agent": "secure-req-check/0.1.1"})
         if api_key:
             self.session.headers.update({"apiKey": api_key})
         self._last_request_time = 0
