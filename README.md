@@ -29,7 +29,7 @@ pip install secure-req-check
 
 ```bash
 git clone https://github.com/jstapi/secure_req_check.git
-cd secure-req-check
+cd secure_req_check
 pip install .
 ```
 
@@ -136,7 +136,7 @@ security_scan:
 
 ```bash
 git clone https://github.com/jstapi/secure_req_check.git
-cd secure-req-check
+cd secure_req_check
 python -m venv venv
 source venv/bin/activate
 pip install -e .[dev]
