@@ -28,7 +28,7 @@ pip install secure-req-check
 ### From source
 
 ```bash
-git clone https://github.com/yourusername/secure-req-check.git
+git clone https://github.com/jstapi/secure_req_check.git
 cd secure-req-check
 pip install .
 ```
@@ -135,7 +135,7 @@ security_scan:
 ## Development
 
 ```bash
-git clone https://github.com/yourusername/secure-req-check.git
+git clone https://github.com/jstapi/secure_req_check.git
 cd secure-req-check
 python -m venv venv
 source venv/bin/activate
