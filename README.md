@@ -39,7 +39,7 @@ pip install .
 2. Run the scanner:
 
    ```bash
-   secure-req-check scan
+   secure-req-check scan -f requirements.txt
    ```
 
 3. Review the table of discovered vulnerabilities.
